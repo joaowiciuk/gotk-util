@@ -146,3 +146,10 @@ func IsCellRendererText(obj glib.IObject) (*gtk.CellRendererText, error) {
 	}
 	return nil, errors.New("not a *gtk.CellRendererText")
 }
+
+func IsDrawingArea(obj glib.IObject) (*gtk.DrawingArea, error) {
+	if drawingArea, ok := obj.(*gtk.DrawingArea); ok {
+		return drawingArea, nil
+	}
+	return nil, errors.New("not a *gtk.DrawingArea")
+}
