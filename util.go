@@ -8,7 +8,6 @@ import (
 )
 
 func IsWindow(obj glib.IObject) (*gtk.ApplicationWindow, error) {
-	// Make type assertion (as per gtk.go).
 	if win, ok := obj.(*gtk.ApplicationWindow); ok {
 		return win, nil
 	}
@@ -16,7 +15,6 @@ func IsWindow(obj glib.IObject) (*gtk.ApplicationWindow, error) {
 }
 
 func IsAssistant(obj glib.IObject) (*gtk.Assistant, error) {
-	// Make type assertion (as per gtk.go).
 	if win, ok := obj.(*gtk.Assistant); ok {
 		return win, nil
 	}
@@ -24,7 +22,6 @@ func IsAssistant(obj glib.IObject) (*gtk.Assistant, error) {
 }
 
 func IsDialog(obj glib.IObject) (*gtk.Dialog, error) {
-	// Make type assertion (as per gtk.go).
 	if dialog, ok := obj.(*gtk.Dialog); ok {
 		return dialog, nil
 	}
@@ -32,7 +29,6 @@ func IsDialog(obj glib.IObject) (*gtk.Dialog, error) {
 }
 
 func IsEntry(obj glib.IObject) (*gtk.Entry, error) {
-	// Make type assertion (as per gtk.go).
 	if entry, ok := obj.(*gtk.Entry); ok {
 		return entry, nil
 	}
@@ -40,11 +36,10 @@ func IsEntry(obj glib.IObject) (*gtk.Entry, error) {
 }
 
 func IsComboBoxText(obj glib.IObject) (*gtk.ComboBoxText, error) {
-	// Make type assertion (as per gtk.go).
 	if comboBoxText, ok := obj.(*gtk.ComboBoxText); ok {
 		return comboBoxText, nil
 	}
-	return nil, errors.New("not a *gtk.Entry")
+	return nil, errors.New("not a *gtk.ComboBoxText")
 }
 
 func IsLabel(obj glib.IObject) (*gtk.Label, error) {
@@ -79,21 +74,21 @@ func IsSearchEntry(obj glib.IObject) (*gtk.SearchEntry, error) {
 	if searchEntry, ok := obj.(*gtk.SearchEntry); ok {
 		return searchEntry, nil
 	}
-	return nil, errors.New("not a *gtk.Button")
+	return nil, errors.New("not a *gtk.SearchEntry")
 }
 
 func IsListStore(obj glib.IObject) (*gtk.ListStore, error) {
 	if listStore, ok := obj.(*gtk.ListStore); ok {
 		return listStore, nil
 	}
-	return nil, errors.New("not a *gtk.Button")
+	return nil, errors.New("not a *gtk.ListStore")
 }
 
 func IsEntryCompletion(obj glib.IObject) (*gtk.EntryCompletion, error) {
 	if entryCompletion, ok := obj.(*gtk.EntryCompletion); ok {
 		return entryCompletion, nil
 	}
-	return nil, errors.New("not a *gtk.Button")
+	return nil, errors.New("not a *gtk.EntryCompletion")
 }
 
 func IsSpinner(obj glib.IObject) (*gtk.Spinner, error) {
