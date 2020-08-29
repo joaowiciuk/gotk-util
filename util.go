@@ -153,10 +153,3 @@ func IsDrawingArea(obj glib.IObject) (*gtk.DrawingArea, error) {
 	}
 	return nil, errors.New("not a *gtk.DrawingArea")
 }
-
-func IsTextBuffer(obj glib.IObject) (*gtk.TextBuffer, error) {
-	if textBuffer, ok := obj.(*gtk.TextBuffer); ok {
-		return textBuffer, nil
-	}
-	return nil, errors.New("not a *gtk.TextBuffer")
-}
